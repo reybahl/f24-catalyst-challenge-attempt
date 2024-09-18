@@ -26,6 +26,8 @@ todoList = [
 function deleteTodo(index) {
     console.log("Before: " + todoList)
     // YOUR CODE HERE
+    // use splice function to remove element at index
+    todoList.splice(index, 1);
     console.log("After:" + todoList)
 }
 

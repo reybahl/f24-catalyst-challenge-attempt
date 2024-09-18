@@ -8,7 +8,7 @@ todoList = [];
  * in what it can do because it takes no input.
  * Is there a way to seperate the concerns so that they could be tied to particular events
  * while also allowing us to add any todos that we want?
- *
+ * 
  * Replace the "__" in each of the "__todo" function definitions to create more logical 
  * function names and define some logic to accomplish these tasks inspired by 
  * what you did in Part A. Call both function in mainTask1b().
@@ -17,12 +17,18 @@ todoList = [];
  * the "// YOUR CODE HERE" comments.
  */
 
-function __todo(todoString) {
-    // YOUR CODE HERE
+function addtodo(todoString) {
+    // create separate function to add to todoList
+    todoList.push(todoString);
 }
 
-function __todo() {
+function printtodo() {
     // YOUR CODE HERE
+    let n = todoList.length;
+    for (let i = 0; i < n; i++) {
+        // output the item number and description
+        console.log(`${i + 1}. ${todoList[i]}`);
+    }
 }
 
 /**
@@ -32,6 +38,9 @@ function __todo() {
  */
 function mainTask1b() {
     // YOUR CODE HERE (simply call the functions you implemented above)
+    addtodo("first element");
+    addtodo("second element");
+    printtodo();
 }
 
 // This bit of code ensures that a main method exists! If it doesn't, then it throws an error

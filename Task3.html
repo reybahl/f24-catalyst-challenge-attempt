@@ -55,14 +55,25 @@
         const todoList = [];
         
         // BE ABLE TO EXPLAIN what document.getByElementID() and .addEventListener() does in this context
+        /*
+        document.getByElementID in this context accesses the button with
+        id 'add-todo-btn'. It is the button with text "Add Todo"
+        .addEventListener() in this context listens for a click on the add todo
+        button and runs the following code when the button is clicked. 
+        */
         document.getElementById('add-todo-btn').addEventListener('click', () => {
             
             // BE ABLE TO EXPLAIN what document.getByElementID() does in this context
+
+            /* document.getByElementID() gets the element 'todo-input' and 
+            can be used to access the value inputted in that textbox */
             const todoInput = document.getElementById('todo-input');
             const createdTodo = todoInput.value.trim();
             
             // Add non-empty string todos to the todo list
-            // YOUR CODE HERE 
+            if (createdTodo) {
+                addTodo(createdTodo);
+            }
 
             // reset the input value after add todo is clicked.
             todoInput.value = '';
@@ -72,6 +83,10 @@
         function refreshTodoList() {
             
             // BE ABLE TO EXPLAIN what document.getByElementID() does in this context
+
+            /* this document.getByElementID() gets the unordered list called
+            'todo-list' The code afterwards updates the list elements inside 
+            the unordered list 'todo-list' */
             const todoListElement = document.getElementById('todo-list');
             todoListElement.innerHTML = '';
 
@@ -90,11 +105,14 @@
 
         function deleteTodo(index) {
             // YOUR CODE HERE (recycle your work from former tasks)
+            // use splice function to remove element at index
+            todoList.splice(index, 1);
             refreshTodoList()
         }
 
         function addTodo(todo) {
             // YOUR CODE HERE (recycle your work from former tasks)
+            todoList.push(todo);
             refreshTodoList()
         }
     </script>
